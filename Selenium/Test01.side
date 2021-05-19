@@ -1,0 +1,409 @@
+{
+  "id": "0baeb6fa-d498-41b9-8e37-fc5c52d84431",
+  "version": "2.0",
+  "name": "TestLibrary",
+  "url": "https://localhost:44355/Auth/Login",
+  "tests": [{
+    "id": "0e3c9bc4-96a7-4e3c-9117-f271c1bdbabe",
+    "name": "Iniciar sesion exitosamente",
+    "commands": [{
+      "id": "de1e0337-4c4e-48f6-8c92-861a2bf5bd42",
+      "comment": "Abrir aplicacion",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "327aa86c-338f-4594-b469-fda2d2c145a3",
+      "comment": "Intentar agregar libro sin credenciales",
+      "command": "click",
+      "target": "linkText=Agregar a biblioteca",
+      "targets": [
+        ["linkText=Agregar a biblioteca", "linkText"],
+        ["css=.col-sm-3:nth-child(1) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Agregar a biblioteca')]", "xpath:link"],
+        ["xpath=//div[@id='myCarousel']/div/div/div/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/biblioteca/add?libro=2')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Agregar a biblioteca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f76b30b-fa3e-48a4-b051-559f792fba28",
+      "comment": "Click en input usuario",
+      "command": "click",
+      "target": "name=Username",
+      "targets": [
+        ["name=Username", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b10fce7-614c-47ab-9e1a-f8f684bcaf72",
+      "comment": "Ingresar usuario",
+      "command": "type",
+      "target": "name=Username",
+      "targets": [
+        ["name=Username", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "d6030382-6653-4976-bcce-2479348b4409",
+      "comment": "Ingresar cotrase;a",
+      "command": "type",
+      "target": "name=Password",
+      "targets": [
+        ["name=Password", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "df5b3f02-1c3a-4bc4-9c26-6adf11a520c0",
+      "comment": "Click en inisiar sesion",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Iniciar Sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "50a7f41c-6435-41d3-8b0f-ccc6bc4de088",
+      "comment": "Esperar a ver la biblioteca",
+      "command": "waitForElementVisible",
+      "target": "css=.item > .row",
+      "targets": [
+        ["css=.item > .row", "css:finder"],
+        ["xpath=//div[@id='myCarousel']/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2147f4bd-7c5b-4937-87cd-b6ad94ce8daf",
+      "comment": "Cerrar aplicacion",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8b373fa5-1ec1-482c-92c5-7b90c7ed43d4",
+    "name": "Comprobar credenciales antes de agregar libro",
+    "commands": [{
+      "id": "ca48b4ff-62d3-4c23-a6ed-95b1b933fb32",
+      "comment": "Abrir aplicacion",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa234e54-11f9-470b-81b5-0002965a130d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-sm-3:nth-child(2) h5:nth-child(2)",
+      "targets": [
+        ["css=.col-sm-3:nth-child(2) h5:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='myCarousel']/div/div/div/div[2]/div/div[2]/h5[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/h5[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fee03a04-eab3-44a4-b30c-09c2b05a7dc0",
+      "comment": "Agregar libro a biblioteca",
+      "command": "click",
+      "target": "linkText=Agregar a biblioteca",
+      "targets": [
+        ["linkText=Agregar a biblioteca", "linkText"],
+        ["css=.col-sm-3:nth-child(1) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Agregar a biblioteca')]", "xpath:link"],
+        ["xpath=//div[@id='myCarousel']/div/div/div/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/biblioteca/add?libro=2')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Agregar a biblioteca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3c96139-9cc7-44bb-9ec6-ef7b2ad37106",
+      "comment": "Esperar a la vista del login",
+      "command": "waitForElementVisible",
+      "target": "css=.row",
+      "targets": [
+        ["css=.row", "css:finder"],
+        ["xpath=//div[3]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8962883f-2d54-4f06-9681-6ff19377f3e2",
+      "comment": "Cerrar aplicacion",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00324997-fdf5-486d-aa1f-fcd7cbe586e1",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d5d059e3-6fd3-48bb-949b-be29514291a8",
+    "name": "Agregar libro a biblioteca",
+    "commands": [{
+      "id": "72db0f8a-becd-4f23-939b-e6da90cef237",
+      "comment": "Abrir aplicacion",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd9a648a-db35-4172-b3c1-f498aca7d99f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "675x693",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2e5298b3-ea54-49a8-838f-623358a24ff7",
+      "comment": "Agregar un libro a la biblioteca",
+      "command": "click",
+      "target": "linkText=Agregar a biblioteca",
+      "targets": [
+        ["linkText=Agregar a biblioteca", "linkText"],
+        ["css=.col-sm-3:nth-child(1) .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Agregar a biblioteca')]", "xpath:link"],
+        ["xpath=//div[@id='myCarousel']/div/div/div/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/biblioteca/add?libro=2')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Agregar a biblioteca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a65172a-cc6c-4ce4-abce-8c2a4b1c9e79",
+      "comment": "Ingresar a mi biblioteca para comprobar",
+      "command": "click",
+      "target": "linkText=Mi Biblioteca",
+      "targets": [
+        ["linkText=Mi Biblioteca", "linkText"],
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Mi Biblioteca')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/Biblioteca')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mi Biblioteca')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1c70e7d-7b52-4861-aeb0-2ce705ab790b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.body-content",
+      "targets": [
+        ["css=.body-content", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c06acb40-9542-4c81-8336-affbadbd1125",
+      "comment": "Cerrar aplicacion",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6fe8ca5a-90d2-4445-875e-9643f947de10",
+    "name": "Cambiar estado de libro a leyendo y leido",
+    "commands": [{
+      "id": "5132aae4-ebca-48e8-a997-7012ab9e0577",
+      "comment": "",
+      "command": "open",
+      "target": "https://localhost:44355/Biblioteca",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c515a7b6-f7b5-4ecd-9e2f-400f9e62666b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "675x693",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b29acd79-4dd9-4741-a30d-778b56fcd12a",
+      "comment": "",
+      "command": "click",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23d1a380-ac67-4cb0-9a5e-2c7f43c67972",
+      "comment": "",
+      "command": "click",
+      "target": "css=.body-content",
+      "targets": [
+        ["css=.body-content", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c60f3659-322d-43d5-b882-ceff143bf439",
+      "comment": "Mostrar el estado modificado a leyendo",
+      "command": "click",
+      "target": "linkText=Leyendo",
+      "targets": [
+        ["linkText=Leyendo", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Leyendo')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/biblioteca/MarcarComoLeyendo?libroId=4')]", "xpath:href"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Leyendo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "11c9bd2f-ab90-4913-9a73-ed1d8932cec0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.body-content",
+      "targets": [
+        ["css=.body-content", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d44c9abc-aa75-4153-a304-a1a6212e287c",
+      "comment": "Clic en el boton terminado",
+      "command": "click",
+      "target": "linkText=Terminado",
+      "targets": [
+        ["linkText=Terminado", "linkText"],
+        ["css=tr:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Terminado')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/biblioteca/MarcarComoTerminado?libroId=4')]", "xpath:href"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Terminado')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "240260a9-9a75-498d-822b-0c743179038d",
+      "comment": "Mostrar el estado modificado a finalizado",
+      "command": "click",
+      "target": "css=.body-content",
+      "targets": [
+        ["css=.body-content", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f637ea9-e34a-49ab-9b3c-5582c48fb7af",
+      "comment": "Cerrar aplicacion",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "a88f01fb-125d-4810-9eb5-f1ec8d0a7902",
+    "name": "Logear con usuario incorrecto",
+    "commands": [{
+      "id": "002ec058-e2ca-44ff-90f8-9e09449d7e79",
+      "comment": "Abrimos la aplicacion",
+      "command": "open",
+      "target": "https://localhost:44355/Auth/Login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2677a46-89c6-412b-a859-6ea7ca746785",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "675x693",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09c99440-8926-4dd9-a5f8-31e7d501963a",
+      "comment": "Seleccionamos el input de usuario",
+      "command": "click",
+      "target": "name=Username",
+      "targets": [
+        ["name=Username", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "136b45db-0da9-4504-9b5c-5d5796461879",
+      "comment": "Ingresamos el usuario",
+      "command": "type",
+      "target": "name=Username",
+      "targets": [
+        ["name=Username", "name"],
+        ["css=.form-group:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "carlos"
+    }, {
+      "id": "51037662-ee64-4a9e-a433-cbc74fdf4730",
+      "comment": "Ingresamos la contraseña",
+      "command": "type",
+      "target": "name=Password",
+      "targets": [
+        ["name=Password", "name"],
+        ["css=.form-group:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='Password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "carlos"
+    }, {
+      "id": "d8bf0d9d-e779-45c0-b7da-55424b101db5",
+      "comment": "Hacemos clic en Iniciar sesion",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Iniciar Sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4e59993-b768-4e9a-aa8c-121c0bb0e526",
+      "comment": "Vemos el mensaje sobre usuario y contraseña no valido",
+      "command": "waitForElementVisible",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Usuario y/o contraseña incorrecta')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "50ca4daf-9ad5-4290-9736-9a8c9b89aee2",
+      "comment": "Cerramos la aplicacion",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "35d25e26-17c0-4133-a656-44d7270ab322",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0e3c9bc4-96a7-4e3c-9117-f271c1bdbabe"]
+  }],
+  "urls": ["https://localhost:44355/", "https://localhost:44355/Biblioteca", "https://localhost:44355/Auth/Login"],
+  "plugins": []
+}
